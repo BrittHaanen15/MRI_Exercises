@@ -33,15 +33,18 @@ figure
 imagesc(abs(M_xshift))
 xlabel('k_x')
 ylabel('k_y')
-title('Manual k-space with x shift, 2D view')
+title('Manual k-space, k_x susceptibility, 2D view')
 
-%Display result in 3D
+%Calculate difference with original k-space
+FTI = fftshift(fft2(I));
+Diff = M_xshift - FTI;
+
+%Display difference
 figure
-mesh(abs(M_xshift))
+imagesc(abs(Diff))
 xlabel('k_x')
 ylabel('k_y')
-zlabel('A')
-title('Manual k-space with x shift, 3D view')
+title('Difference in k-space, k_x susceptibility, 2D view')
 
 %Inverse FT to revert to image
 M_inv = ifft2(M_xshift);
@@ -51,16 +54,19 @@ figure
 surf(abs(M_inv))
 xlabel('x')
 ylabel('y')
-title('Image from reverse FT with x shift, 2D view')
+title('Image from reverse FT, k_x susceptibility, 2D view')
 view(0,90)
 
-%Plot image in 3D
+%Calculate difference with original image
+Im_diff = I - abs(M_inv);
+
+%Show difference
 figure
-surf(abs(M_inv))
+surf(Im_diff)
 xlabel('x')
 ylabel('y')
-zlabel('z')
-title('Image from reverse FT with x shift, 3D view')
+title('Image difference, k_x susceptibility, 2D view')
+view(0,90)
 
 %Do the same for y shift
 M_yshift = zeros(64);
@@ -76,15 +82,18 @@ figure
 imagesc(abs(M_yshift))
 xlabel('k_x')
 ylabel('k_y')
-title('Manual k-space with y shift, 2D view')
+title('Manual k-space, k_y susceptibility, 2D view')
 
-%Display result in 3D
+%Calculate difference with original k-space
+FTI = fftshift(fft2(I));
+Diff = M_yshift - FTI;
+
+%Display difference
 figure
-mesh(abs(M_yshift))
+imagesc(abs(Diff))
 xlabel('k_x')
 ylabel('k_y')
-zlabel('A')
-title('Manual k-space with y shift, 3D view')
+title('Difference in k-space, k_y susceptibility, 2D view')
 
 %Inverse FT to revert to image
 M_inv = ifft2(M_yshift);
@@ -94,13 +103,16 @@ figure
 surf(abs(M_inv))
 xlabel('x')
 ylabel('y')
-title('Image from reverse FT with y shift, 2D view')
+title('Image from reverse FT, k_y susceptibility, 2D view')
 view(0,90)
 
-%Plot image in 3D
+%Calculate difference with original image
+Im_diff = I - abs(M_inv);
+
+%Show difference
 figure
-surf(abs(M_inv))
+surf(Im_diff)
 xlabel('x')
 ylabel('y')
-zlabel('z')
-title('Image from reverse FT with y shift, 3D view')
+title('Image difference, k_y susceptibility, 2D view')
+view(0,90)
