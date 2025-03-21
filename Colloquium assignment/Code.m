@@ -39,14 +39,14 @@ FTI = fftshift(fft2(I));
 
 %Display result in 2D
 figure
-imagesc(abs(FTI))
+imagesc(log(abs(FTI)))
 xlabel('k_x')
 ylabel('k_y')
 title('k-space, 2D view')
 
 %Display result in 3D
 figure
-mesh(abs(FTI))
+mesh(log(abs(FTI)))
 xlabel('k_x')
 ylabel('k_y')
 zlabel('A')
@@ -68,14 +68,14 @@ end
 
 %Display result in 2D
 figure
-imagesc(abs(M))
+imagesc(log(abs(M)))
 xlabel('k_x')
 ylabel('k_y')
 title('Manual k-space, 2D view')
 
 %Display result in 3D
 figure
-mesh(abs(M))
+mesh(log(abs(M)))
 xlabel('k_x')
 ylabel('k_y')
 zlabel('A')

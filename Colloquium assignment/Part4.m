@@ -30,7 +30,7 @@ end
 
 %Display result in 2D
 figure
-imagesc(abs(M_xshift))
+imagesc(log(abs(M_xshift)))
 xlabel('k_x')
 ylabel('k_y')
 title('Manual k-space, k_x susceptibility, 2D view')
@@ -41,7 +41,7 @@ Diff = M_xshift - FTI;
 
 %Display difference
 figure
-imagesc(abs(Diff))
+imagesc(log(abs(Diff)))
 xlabel('k_x')
 ylabel('k_y')
 title('Difference in k-space, k_x susceptibility, 2D view')
@@ -79,7 +79,7 @@ end
 
 %Display result in 2D
 figure
-imagesc(abs(M_yshift))
+imagesc(log(abs(M_yshift)))
 xlabel('k_x')
 ylabel('k_y')
 title('Manual k-space, k_y susceptibility, 2D view')
@@ -90,7 +90,7 @@ Diff = M_yshift - FTI;
 
 %Display difference
 figure
-imagesc(abs(Diff))
+imagesc(log(abs(Diff)))
 xlabel('k_x')
 ylabel('k_y')
 title('Difference in k-space, k_y susceptibility, 2D view')
