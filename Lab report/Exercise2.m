@@ -47,6 +47,14 @@ for p = 1:size(names,2)
     
 end
 
+%Fix data sorting
+% [TItimes, I] = sort(TItimes);
+[Angles, I] = sort(Angles);
+for i = 1:size(Data,1)
+    line = Data(i,:);
+    Data(i,:) = line(I); 
+end
+
 %Plot figure
 figure
 %comment/uncomment relevant one:
@@ -56,5 +64,5 @@ legend('ROI 1', 'ROI 2', 'ROI 3', 'ROI 4', 'ROI 5');
 % title('Signal intensity versus Inversion Time')
 title('Signal intensity versus flip angle')
 % xlabel('TI (ms)')
-xlabel('Angle (deg')
+xlabel('Angle (deg)')
 ylabel('Mean signal in ROI')
