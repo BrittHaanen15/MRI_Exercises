@@ -23,14 +23,6 @@ ylabel('y')
 title('Original image, 2D view')
 view(0,90)
 
-%Plot image in 3D
-figure
-surf(I)
-xlabel('x')
-ylabel('y')
-zlabel('z')
-title('Original image, 3D view')
-
 
 %%%%%%%%%%%%%%%% PART 2 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -43,14 +35,6 @@ imagesc(log(abs(FTI)))
 xlabel('k_x')
 ylabel('k_y')
 title('k-space, 2D view')
-
-%Display result in 3D
-figure
-mesh(log(abs(FTI)))
-xlabel('k_x')
-ylabel('k_y')
-zlabel('A')
-title('k-space, 3D view')
 
 
 %%%%%%%%%%%%%%%% PART 3 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -73,13 +57,6 @@ xlabel('k_x')
 ylabel('k_y')
 title('Manual k-space, 2D view')
 
-%Display result in 3D
-figure
-mesh(log(abs(M)))
-xlabel('k_x')
-ylabel('k_y')
-zlabel('A')
-title('Manual k-space, 3D view')
 
 %Inverse FT to revert to image
 M_inv = ifft2(M);
@@ -91,11 +68,3 @@ xlabel('x')
 ylabel('y')
 title('Image from reverse FT, 2D view')
 view(0,90)
-
-%Plot image in 3D
-figure
-surf(abs(M_inv))
-xlabel('x')
-ylabel('y')
-zlabel('z')
-title('Image from reverse FT, 3D view')
