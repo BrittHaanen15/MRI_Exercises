@@ -2,6 +2,7 @@ t1 = zeros(size(Data,1),1);
 for i = 1:size(Data,1)
     %Isolate data
     x = transpose(Angles);
+    x = x.*(pi/180);
     % x = transpose(TItimes)./1000
 
     y = transpose(Data(i,:));
