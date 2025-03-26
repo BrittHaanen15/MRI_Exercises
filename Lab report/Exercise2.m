@@ -33,7 +33,7 @@ for p = 1:size(names,2)
 
     %extract flip angle
     Angles(1,p) = info.FlipAngle;
-    info.RepetitionTime
+
     %Read in image
     im = dicomread(names{p});
     % figure
