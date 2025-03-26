@@ -127,12 +127,14 @@ for i = 1:size(Data,1)
     plot(tvec, fun(c,tvec), "Color", col(i))
 end
 
-title('GRE data with fitted curves')
+
 ylabel('Signal/1000')
 %For IR
+title('IR data with fitted curves')
 xlabel('Inversion time (s)')
 legend('Data 1', ['Fit 1 T1=' num2str(t1(1)*1000) ' ms'], 'Data 2', ['Fit 2 T1=' num2str(t1(2)*1000) ' ms'], 'Data 3', ['Fit 3 T1=' num2str(t1(3)*1000) ' ms'], 'Data 4', ['Fit 4 T1=' num2str(t1(4)*1000) ' ms'], 'Data 5', ['Fit 5 T1=' num2str(t1(5)*1000) ' ms'])
 %For GRE
+% title('GRE data with fitted curves')
 % xlabel('Angle (rad)')
 % legend('Data 1', ['Fit 1 T1=' num2str(t1(1)) ' ms'], 'Data 2', ['Fit 2 T1=' num2str(t1(2)) ' ms'], 'Data 3', ['Fit 3 T1=' num2str(t1(3)) ' ms'], 'Data 4', ['Fit 4 T1=' num2str(t1(4)) ' ms'], 'Data 5', ['Fit 5 T1=' num2str(t1(5)) ' ms'])
 
