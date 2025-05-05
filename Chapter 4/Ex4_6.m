@@ -2,7 +2,7 @@
 M0 = 1;
 angle = 180; %in degrees
 a = 2*pi*(angle/360); %flip angle
-TR = 1; %repetition time
+TR = 10; %repetition time
 T1 = 1; %T1 relaxation time
 E = exp(-TR/T1);
 
@@ -11,7 +11,7 @@ time = 1:100;
 time = time*TR;
 M_z = zeros(1,100);
 M_y = zeros(1,100);
-M_z(1) = 1;
+M_z(1) = M0;
 
 %Model M
 for i = 2:100
